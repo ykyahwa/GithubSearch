@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GithubSearch</string>
+    <string name="move_github">Github 검색</string>
+    <string name="move_ui">UI로 이동</string>
+    <string name="tab_like">LIKE</string>
+    <string name="tab_github">Github</string>
+    <string name="search">SEARCH</string>
+</resources>
