@@ -8,5 +8,5 @@ import retrofit2.http.Query
 
 interface GithubApi {
     @GET("/search/users")
-    fun getSearchUsers(@Query("q") keyword: String): Single<GIthubUserListData>
+    fun getSearchUsers(@Query("q") keyword: String, @Query("page") page: Int?): Single<GIthubUserListData>
 }

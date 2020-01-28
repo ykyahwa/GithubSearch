@@ -8,13 +8,13 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 interface GithubRepository {
-    fun searchUsers(keyword: String) : Single<GIthubUserListData>
+    fun searchUsers(keyword: String, page: Int?) : Single<GIthubUserListData>
 }
 
 class GithubRepositoryImpl @Inject constructor(private val githubApi: GithubApi): GithubRepository {
 
-    override fun searchUsers(keyword: String): Single<GIthubUserListData> =
-        githubApi.getSearchUsers(keyword)
+    override fun searchUsers(keyword: String, page: Int?): Single<GIthubUserListData> =
+        githubApi.getSearchUsers(keyword, page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 

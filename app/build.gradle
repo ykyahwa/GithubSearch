@@ -44,7 +44,10 @@ dependencies {
     // Glide
     implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
     kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
-
+//    implementation ("com.github.bumptech.glide.integration:okhttp:4.5.0") {
+//        exclude group: "com.squareup.okhttp:"
+//    }
+//    implementation "com.squareup.okhttp:okhttp:2.7.5"
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
@@ -64,6 +67,11 @@ dependencies {
 
     //timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //paging
+    implementation  "androidx.paging:paging-runtime-ktx:$rootProject.pagingVersion"
+    implementation  "android.arch.paging:rxjava2:$rootProject.pagingRxVersion"
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

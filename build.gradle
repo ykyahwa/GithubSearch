@@ -13,6 +13,8 @@ buildscript {
         dagger2Version = '2.23.2'
         archLifecycleVersion = '2.2.0'
         fragmentKtxVersion = '1.1.0-rc01'
+        pagingVersion = '2.1.0'
+        pagingRxVersion = '1.0.0-alpha1'
     }
 
     repositories {

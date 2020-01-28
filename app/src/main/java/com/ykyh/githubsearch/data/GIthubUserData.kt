@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class GIthubUserListData(
     @SerializedName("incomplete_results") val incompleteResults: Boolean?,
-    @SerializedName("items") val items: List<GithubUserData>?,
+    @SerializedName("items") val items: ArrayList<GithubUserData>,
     @SerializedName("total_count") val totalCount: Int?
 )
 
