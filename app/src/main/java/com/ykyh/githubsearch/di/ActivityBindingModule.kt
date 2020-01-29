@@ -3,6 +3,7 @@ package com.ykyh.githubsearch.di
 import com.ykyh.githubsearch.presentation.github.GithubActivity
 import com.ykyh.githubsearch.presentation.github.GithubModule
 import com.ykyh.githubsearch.presentation.main.MainActivity
+import com.ykyh.githubsearch.presentation.ui.UIActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,10 +11,15 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBindingModule {
 
     @ActivityScoped
-    @ContributesAndroidInjector()
+    @ContributesAndroidInjector
     abstract fun mainActivity(): MainActivity
 
     @ActivityScoped
     @ContributesAndroidInjector(modules = [GithubModule::class, FragmentModule::class])
     abstract fun githubActivity(): GithubActivity
+
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract fun uiActivity(): UIActivity
 }
