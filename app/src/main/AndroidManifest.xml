@@ -24,7 +24,7 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".presentation.ui.UIActivity"
+        <activity android:name=".presentation.room.RoomActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>

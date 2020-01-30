@@ -38,7 +38,6 @@ class LikeFragment @Inject constructor(): DaggerFragment() {
 
     override fun onResume() {
         super.onResume()
-        Timber.d("LikeFragment onResume")
 
         listener?.getLikeData()?.let {
             adapter.items = it
