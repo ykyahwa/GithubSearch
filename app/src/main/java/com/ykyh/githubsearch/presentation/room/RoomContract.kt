@@ -9,6 +9,7 @@ interface RoomContract{
         fun initView()
         fun setRoomList(data: List<RoomData>)
         fun setReservation(data: List<RoomData>)
+        fun setRoomCount(count: Int)
     }
 
     interface RoomPresenter {

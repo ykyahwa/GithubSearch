@@ -28,5 +28,6 @@ class RoomPresenter: RoomContract.RoomPresenter {
 
         view?.setRoomList(data)
         view?.setReservation(data)
+        view?.setRoomCount(data.size)
     }
 }

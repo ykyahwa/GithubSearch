@@ -5,6 +5,9 @@ import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.core.text.buildSpannedString
+import androidx.core.text.color
 import androidx.recyclerview.widget.RecyclerView
 import com.ykyh.githubsearch.R
 import com.ykyh.githubsearch.data.RoomData
@@ -90,5 +93,16 @@ class RoomActivity : DaggerAppCompatActivity(), RoomContract.RoomView{
         Timber.d("setReservation = $data")
         roomReservationAdapter.items = data
         roomReservationAdapter.notifyDataSetChanged()
+    }
+
+    override fun setRoomCount(count: Int) {
+        val text = buildSpannedString {
+            append("현재 사용 가능 회의실 ")
+            color(ContextCompat.getColor(this@RoomActivity, R.color.deep_sky_blue)) {
+                append(count.toString())
+            }
+        }
+
+        tvRoomTitle.text = text
     }
 }

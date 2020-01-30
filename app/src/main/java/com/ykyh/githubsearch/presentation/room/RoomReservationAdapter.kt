@@ -13,7 +13,7 @@ import timber.log.Timber
 
 class RoomReservationAdapter : RecyclerView.Adapter<RoomReservationAdapter.RoomReservationHolder>() {
 
-    var items: List<RoomData> = arrayListOf()
+    var items: List<RoomData> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         RoomReservationHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_room_reservation, parent, false))

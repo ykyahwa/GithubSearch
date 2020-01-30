@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.item_room_list.view.*
 
 class RoomListAdapter : RecyclerView.Adapter<RoomListAdapter.RoomListHolder>() {
 
-    var items: List<RoomData> = arrayListOf()
+    var items: List<RoomData> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         RoomListHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_room_list, parent, false))
