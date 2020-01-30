@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout
+        android:id="@+id/flNow"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintStart_toEndOf="@id/vLine3"
@@ -13,12 +14,14 @@
         app:layout_constraintBottom_toBottomOf="@id/vLine1"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/tvNow"
             style="@style/TextStyle3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="현재시간" />
 
         <View
+            android:id="@+id/vNowLine"
             android:layout_width="1dp"
             android:layout_height="10dp"
             android:background="@color/very_light_pink_two"

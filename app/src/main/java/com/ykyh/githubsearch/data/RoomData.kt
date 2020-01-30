@@ -7,6 +7,6 @@ data class RoomData(
     @SerializedName("location") val location: String,
     @SerializedName("reservations") val reservations: ArrayList<RoomResrvation>)
 
-class RoomResrvation (
+data class RoomResrvation (
     @SerializedName("startTime") val startTime: String,
     @SerializedName("endTime") val endTime: String)
