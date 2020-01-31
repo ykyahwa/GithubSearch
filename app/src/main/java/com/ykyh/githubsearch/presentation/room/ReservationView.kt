@@ -8,7 +8,9 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
 import com.ykyh.githubsearch.R
 import com.ykyh.githubsearch.data.RoomResrvation
+import com.ykyh.githubsearch.utils.toPx
 import kotlinx.android.synthetic.main.view_reservation.view.*
+import timber.log.Timber
 
 
 class ReservationView  @JvmOverloads constructor(context: Context,
@@ -34,24 +36,28 @@ class ReservationView  @JvmOverloads constructor(context: Context,
     }
 
     private fun addReservation(startTime: Int, endTime: Int) {
-        val v = View(context)
-        v.id = View.generateViewId()
-        v.setBackgroundColor(ContextCompat.getColor(context, R.color.deep_sky_blue))
-        val newParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
-
-//        param.startToStart = startView(startTime).id
-//        param.endToEnd = endView(endTime).id
-        newParams.startToStart = R.id.vLine1
-        newParams.endToEnd = R.id.vLine2
-        newParams.topToTop = R.id.vLine1
-        newParams.bottomToBottom = R.id.vLine1
+        val view = View(context)
+        view.id = View.generateViewId()
+        view.setBackgroundColor(ContextCompat.getColor(context, R.color.deep_sky_blue))
+        addView(view)
 
 
+        val startView = startView(startTime)
+        val endView = endView(endTime)
+        Timber.d("startView = $startView , endView = $endView")
         val constraintSet = ConstraintSet()
-        constraintSet.connect(vLine1.getId(), ConstraintSet.TOP, vLine1.getId(), ConstraintSet.BOTTOM, 0)
-        constraintSet.connect(vLine1.getId(), ConstraintSet.LEFT, vLine2.getId(), ConstraintSet.RIGHT, 0)
+        constraintSet.clone(this)
+        constraintSet.connect(view.id, ConstraintSet.TOP, vLine1.id, ConstraintSet.TOP, 0)
+        constraintSet.connect(view.id, ConstraintSet.BOTTOM, vLine1.id, ConstraintSet.BOTTOM, 0)
+        constraintSet.connect(view.id, ConstraintSet.START, startView.id, ConstraintSet.START, 0)
+        constraintSet.connect(view.id, ConstraintSet.LEFT, startView.id, ConstraintSet.LEFT, 0)
+        constraintSet.connect(view.id, ConstraintSet.END, endView.id, ConstraintSet.END, 0)
+        constraintSet.connect(view.id, ConstraintSet.RIGHT, endView.id, ConstraintSet.RIGHT, 0)
+        constraintSet.constrainWidth(view.id, ConstraintSet.MATCH_CONSTRAINT)
+        constraintSet.constrainHeight(view.id, ConstraintSet.MATCH_CONSTRAINT)
+
         constraintSet.applyTo(this)
-        addView(v, childCount, newParams)
+
     }
 
     private fun startView(startTime: Int) = when(startTime) {

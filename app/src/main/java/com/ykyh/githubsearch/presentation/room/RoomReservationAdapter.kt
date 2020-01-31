@@ -27,8 +27,6 @@ class RoomReservationAdapter : RecyclerView.Adapter<RoomReservationAdapter.RoomR
         holder.tvRoomName.text = item.name
         holder.tvLocation.text = item.location
         holder.reservationView.setReservation(item.reservations)
-
-
     }
 
     inner class RoomReservationHolder(itemView: View): RecyclerView.ViewHolder(itemView), LayoutContainer {
@@ -39,7 +37,5 @@ class RoomReservationAdapter : RecyclerView.Adapter<RoomReservationAdapter.RoomR
         val tvRoomName = itemView.tvRoomName
         val tvLocation = itemView.tvLocation
         val reservationView = itemView.reservationView
-
-
     }
 }
